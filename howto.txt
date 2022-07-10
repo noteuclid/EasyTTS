@@ -1,0 +1,29 @@
+How to use EasyTTS
+
+EasyTTS is an app that makes it easy to use text-to-speech on Windows. To use it, type whatever you want
+to be spoken in the main text box. Then click the play button. That's it! There are three dropdown menus
+also. The top one allows you to choose the 'voice', and the second one allows you to change the speed
+of the voice (The Google voice speed cannot be changed.) The third one allows you to choose the language
+of the text to want to convert to speech. In future versions, more languages will be added. Note that
+to use any other language than English you must be connected to the Internet and use the Google
+voice protocol.
+
+Tips:
+    Unlike previous versions of EasyTTS, you do not need to run the program as an administrator
+    to use EasyTTS.
+
+    When using the Google text-to-speech protocol, make sure you are connected to the Internet
+    in order for the program to access Google's servers. If you are not connected to the Internet
+    you may still use the offline Microsoft TTS protocols.
+
+    You can also use the appropriate buttons to open a text file to be read or save the current
+    contents of the text box as a text file.
+
+
+EasyTTS Copyright (c) 2022 Aidan Morton
+
+gTTS Copyright (c) 2014-2021 Pierre Nicolas Durette
+The full license can be found at https://gtts.readthedocs.io/en/latest/license.html
+
+Special Thanks to JS for the original concept of a text-to-speech app "so I get those voices like
+they have on Macs."
