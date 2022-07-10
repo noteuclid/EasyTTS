@@ -1,5 +1,5 @@
+# Spec file used when compiling the .py file into an .exe using pyinstaller
 # -*- mode: python ; coding: utf-8 -*-
-
 
 block_cipher = None
 
