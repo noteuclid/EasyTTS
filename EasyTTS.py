@@ -145,6 +145,7 @@ def clean_up():
 
 def get_help():
 
+    
     def close_help_window():
         win2.destroy()
         help_button.config(state="normal")
@@ -161,6 +162,7 @@ def get_help():
     # Configuring weights
     win2.rowconfigure(1, weight=5)
     win2.columnconfigure(1, weight=5)
+    
     with open("howto.txt", 'r') as h:
         instructions = h.read()
     # TODO: Put a tkinter.scrollbar here!!!!!!!
@@ -216,10 +218,9 @@ scrollbar.grid(row=1, column=2, sticky='ns')
 
 text['yscrollcommand'] = scrollbar.set
 
-# TODO: Add a scrollbar here and do the help box
-
 start = Button(win1, text='Play', command=lambda: make_output())
 start.grid(row=2, column=1, padx=5, pady=5, sticky='nw')
+
 # This not useful now that the app installs to %userprofile%\AppData\local
 # if check_for_admin():
 #     label_words = "Please ensure you are connected to the Internet when using the Google TTS protocol."
@@ -227,17 +228,13 @@ start.grid(row=2, column=1, padx=5, pady=5, sticky='nw')
 #     label_words = "Running this program as an administrator will allow use of the Google TTS protocol."
 # label = Label(win1, text=label_words)
 # label.grid(row=4, column=1, padx=5, pady=5, sticky='s')
+
 help_button = Button(win1, text="How to use", command=lambda: get_help())
 help_button.grid(row=2, column=1, padx=5, pady=5, sticky='ne', columnspan=2)
+
 settings = LabelFrame(win1, text="TTS voice, voice rate, language")
 settings.grid(row=2, column=1, pady=5, sticky='n', rowspan=2)
-
-
-# var = StringVar()
-# var.trace('w', language_check)
-
 protocol = Combobox(settings, values=protocol_list, state='readonly')
-
 protocol.current(0)
 protocol.grid(row=2, column=1, sticky='n')
 rate = Combobox(settings, values=["Fastest",
@@ -256,6 +253,9 @@ language.grid(row=4, column=1, sticky='n')
 # Creating a button that allows the user to save what is currently in input_box
 save = Button(win1, text='Save as text file', command=lambda: save_file())
 save.grid(row=3, column=1, padx=5, pady=5, sticky='ne', columnspan=2)
+
+# TODO: Remove threads for checking Combobox values and use a StringVar instead
+
 background = threading.Thread(
     name='background', target=lambda: check_for_google_protocol())
 background.start()
